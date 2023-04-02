@@ -17,6 +17,7 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
+
     <BrowserRouter>
       <ThirdwebProvider activeChain={activeChain}>
         {/* <App /> */}
@@ -27,5 +28,6 @@ root.render(
         </Routes>
       </ThirdwebProvider>
     </BrowserRouter>
+
   </React.StrictMode>
 );
