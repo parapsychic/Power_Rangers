@@ -1,0 +1,35 @@
+.card-container{
+  margin: 20px;
+}
+
+.profile-picture {
+  margin: 10px 10px 10px 10px;
+  border-radius: 50%;
+  height: 50px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.feed-container {
+  border-radius: 10px;
+  width: 40rem;
+  box-shadow: 0px 0px 15px #4c93d1;
+}
+
+.text {
+  margin: 0px 10px 10px 10px;
+}
+
+.user-bar {
+  display: flex;
+  align-items: center;
+
+}
+
+.user-media {
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+}

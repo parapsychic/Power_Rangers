@@ -1,18 +1,19 @@
 import { ConnectWallet } from "@thirdweb-dev/react";
 import "./styles/Home.css";
+import logo from "./assets/logo.png"
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
   return (
     <div className="container">
       <main className="main">
+      <img src={logo} alt="My Image" width={400} height={400} />
         <h1 className="title">
-          Welcome to <a href="https://thirdweb.com/">thirdweb</a>!
+          Welcome to <a href="">FoodiFy</a>!
         </h1>
 
         <p className="description">
-          Get started by configuring your desired network in{" "}
-          <code className="code">src/main.jsx</code>, then modify the{" "}
-          <code className="code">src/App.jsx</code> file!
+        "From farm to table, let's keep it safe and stable!"
         </p>
 
         <div className="connect">
@@ -22,27 +23,28 @@ export default function Home() {
           }} />
         </div>
 
+        
         <div className="grid">
-          <a href="https://portal.thirdweb.com/" className="card">
-            <h2>Portal &rarr;</h2>
+          <Link to="/team" className="card">
+            <h2>Team &rarr;</h2>
             <p>
-              Guides, references and resources that will help you build with
-              thirdweb.
+            Discover the faces behind foodify.
+            Visit to learn about our talented professionals and how they contribute to our success.
             </p>
-          </a>
+          </Link>
 
-          <a href="https://thirdweb.com/dashboard" className="card">
-            <h2>Dashboard &rarr;</h2>
+          <Link to="/objective" className="card">
+            <h2>Objective &rarr;</h2>
             <p>
-              Deploy, configure and manage your smart contracts from the
-              dashboard.
+            Our objective is to promote food safety awareness and prevent illness through education and resources.
             </p>
-          </a>
+          </Link>
 
           <a href="https://portal.thirdweb.com/templates" className="card">
-            <h2>Templates &rarr;</h2>
+            <h2>Contact Us &rarr;</h2>
             <p>
-              Discover and clone template projects showcasing thirdweb features.
+            Have a question or comment? Contact us to learn more about our services and resources, or to provide feedback on our website. 
+            
             </p>
           </a>
         </div>
