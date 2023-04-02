@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import App from "./App";
-import Feed from './Feed';
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "./styles/globals.css";
 import Team from "./pages/team";
@@ -22,7 +21,7 @@ root.render(
       <ThirdwebProvider activeChain={activeChain}>
         <App />
         <Routes>
-          <Route path="/team" element={<Team/>}/>
+          <Route path="/team" element={<Team />} />
         </Routes>
       </ThirdwebProvider>
     </BrowserRouter>
