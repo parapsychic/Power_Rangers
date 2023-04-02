@@ -1,14 +1,14 @@
 import "./styles/Feed.css";
 import Card from "./Card"
 
-export default function Feed() {
+export default function Feed({name, profilePicture}) {
     return (
         <>
       <div className="nav-bar">
       <div id="main-logo">Foodify</div>
       <div id="user-elements">
-      <div id="name">ParaPsychic</div>
-      <img id="profile-picture" src="https://www.drodd.com/images14/white1.jpg"></img>
+      <div id="name">{name}</div>
+      <img id="profile-picture" src={profilePicture}></img>
       </div>
       </div>
         <div className="feed">

@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
+import Feed from './Feed';
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "./styles/globals.css";
 
@@ -14,7 +15,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <ThirdwebProvider activeChain={activeChain}>
-      <App />
+      <Feed name='Alan' profilePicture={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/2048px-Solid_white.svg.png"}/>
     </ThirdwebProvider>
   </React.StrictMode>
 );
