@@ -1,7 +1,7 @@
-import "./styles/Card.css";
+import "../styles/Card.css";
 
 export default function Card({ profilePicture, name, text, image }) {
-  
+
   return (
     <div className="feed-container">
       <div className="user-bar">
