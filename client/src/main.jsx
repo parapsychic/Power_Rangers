@@ -1,9 +1,12 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import App from "./App";
 import Feed from './Feed';
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "./styles/globals.css";
+import Team from "./pages/team";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -14,8 +17,15 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <ThirdwebProvider activeChain={activeChain}>
-      <Feed name='Alan' profilePicture={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/2048px-Solid_white.svg.png"}/>
-    </ThirdwebProvider>
+
+    <BrowserRouter>
+      <ThirdwebProvider activeChain={activeChain}>
+        <App />
+        <Routes>
+          <Route path="/team" element={<Team/>}/>
+        </Routes>
+      </ThirdwebProvider>
+    </BrowserRouter>
+
   </React.StrictMode>
 );
