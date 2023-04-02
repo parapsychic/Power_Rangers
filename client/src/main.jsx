@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import App from "./App";
+import Feed from './Feed';
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "./styles/globals.css";
 import Team from "./pages/team";
@@ -16,6 +17,7 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
+
     <BrowserRouter>
       <ThirdwebProvider activeChain={activeChain}>
         <App />
@@ -24,5 +26,6 @@ root.render(
         </Routes>
       </ThirdwebProvider>
     </BrowserRouter>
+
   </React.StrictMode>
 );
