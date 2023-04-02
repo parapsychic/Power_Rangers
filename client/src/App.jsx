@@ -33,12 +33,12 @@ export default function Home() {
             </p>
           </Link>
 
-          <a href="https://thirdweb.com/dashboard" className="card">
+          <Link to="/objective" className="card">
             <h2>Objective &rarr;</h2>
             <p>
             Our objective is to promote food safety awareness and prevent illness through education and resources.
             </p>
-          </a>
+          </Link>
 
           <a href="https://portal.thirdweb.com/templates" className="card">
             <h2>Contact Us &rarr;</h2>

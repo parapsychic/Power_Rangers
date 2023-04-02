@@ -1,6 +1,7 @@
 
 import "../styles/Home.css";
 import person from "../assets/person.png"
+import logo from "../assets/logo.png"
 
 export default function Team() {
   return (
@@ -8,7 +9,7 @@ export default function Team() {
       <main className="main">
       <img src={logo} alt="My Image" width={400} height={400} />
         <h1 className="title">
-          Welcome to <a href="">FoodiFy</a>!
+          Meet our <a href="">Team</a>!
         </h1>
 
         <p className="description">
@@ -18,23 +19,42 @@ export default function Team() {
       
 
         <div className="grid">
-          <a href="https://portal.thirdweb.com/" className="card">
-            <h2>Alan Biju George</h2>
-            <img src={person} alt="My Image" width={30} height={50} />
+          <a href="https://www.linkedin.com/in/alan-bg/" className="card">
+            <h2>Alan  Biju  George</h2>
+            <div className="teamdes">
+            <img src={person} alt="My Image" width={100} height={150} />
+            <p>
+            Software engineer,Specialised in App and Web Development.
+            </p>
+            </div>
           </a>
 
-          <a href="https://thirdweb.com/dashboard" className="card">
+          <a href="https://www.linkedin.com/in/anandusunilkumar/" className="card">
             <h2>Anandu Sunil Kumar</h2>
-            <img src={person} alt="My Image" width={30} height={50} />
+            <div className="teamdes">
+            <img src={person} alt="My Image" width={100} height={150} /><p>
+            Software engineer,Specialised in App Development and Machine Learning
+            </p>
+            </div>
           </a>
 
-          <a href="https://portal.thirdweb.com/templates" className="card">
-            <h2>Antony Thomas</h2>
-            <img src={person} alt="My Image" width={30} height={50} />
+          <a href="https://www.linkedin.com/in/antony-thomas-8a6273212/" className="card">
+            <h2> Antony  Thomas</h2>
+            <div className="teamdes">
+            <img src={person} alt="My Image" width={100} height={150} />
+            <p>
+            Software engineer,Specialised in Webdevelopment and Blockchain.
+            </p>
+            </div>
           </a>
-          <a href="https://portal.thirdweb.com/templates" className="card">
-            <h2>Febin K Dominic</h2>
-            <img src={person} alt="My Image" width={30} height={50} />
+          <a href="https://www.linkedin.com/in/febinkdominic/" className="card">
+            <h2>Febin  K  Dominic</h2>
+            <div className="teamdes">
+            <img src={person} alt="My Image" width={100} height={150} />
+            <p>
+            Software engineer,Specialised in Machine Learning,App and Web Developmen.
+            </p>
+            </div>
           </a>
         </div>
       </main>
