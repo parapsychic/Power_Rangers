@@ -7,6 +7,7 @@ import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "./styles/globals.css";
 import Team from "./pages/team";
 import Objective from "./pages/objective";
+import Feed from "./pages/Feed";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -25,6 +26,8 @@ root.render(
           <Route path="/" element={<App/>}/>
           <Route path="/team" element={<Team/>}/>
           <Route path="/objective" element={<Objective/>}/>
+          <Route path="/Feed" element={<Feed/>}/>
+      
         </Routes>
       </ThirdwebProvider>
     </BrowserRouter>
