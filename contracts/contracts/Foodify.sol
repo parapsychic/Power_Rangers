@@ -41,8 +41,10 @@ contract foodify{
         newPost.postImg = postImg;
         newPost.creator = msg.sender;
         newPost.id = counter;
+        newPost.priority = 0;
         newPost.upvotes = 0;
         newPost.downvotes = 0;
+        
         emit postCreated(
             msg.sender,
             counter,
