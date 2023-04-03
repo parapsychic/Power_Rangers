@@ -31,13 +31,13 @@ export const StateContextProvider = ({ children }) => {
         }
     }
 
-    const getPost = async () =>{
+    const getPost = async () => {
         const posts = await contract.call('getPost');
 
         const parsedPosts = posts.map((post, i) => ({
             creator: post.creator,
             postTxt: post.postTxt,
-            postImg: post.postImg,
+            postImg: post.postImg,  
             priority: post.priority,
             upvotes: post.upvotes,
             downvotes: post.downvotes,

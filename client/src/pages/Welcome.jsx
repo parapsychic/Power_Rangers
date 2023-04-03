@@ -19,32 +19,33 @@ const Welcome = () => {
         </p>
 
         <div className="connect">
-          <ConnectWallet dropdownPosition={{
+          <ConnectWallet 
+          dropdownPosition={{
             align: 'center',
             side: 'bottom'
           }} />
         </div>
 
         
-        <div className="grid">
+        <div className="flex">
           <Link to="/team" className="card">
-            <h2>Team &rarr;</h2>
-            <p>
+            <h2 className='font-epilogue font-semibold text-[18px] text-white'>Team &rarr;</h2>
+            <p className='font-epilogue font-semibold text-[18px] text-white'>
             Discover the faces behind foodify.
             Visit to learn about our talented professionals and how they contribute to our success.
             </p>
           </Link>
 
           <Link to="/objective" className="card">
-            <h2>Objective &rarr;</h2>
-            <p>
+            <h2 className='font-epilogue font-semibold text-[18px] text-white'>Objective &rarr;</h2>
+            <p className='font-epilogue font-semibold text-[18px] text-white'>
             Our objective is to promote food safety awareness and prevent illness through education and resources.
             </p>
           </Link>
 
           <a href="https://portal.thirdweb.com/templates" className="card">
-            <h2>Contact Us &rarr;</h2>
-            <p>
+            <h2 className='font-epilogue font-semibold text-[18px] text-white'>Contact Us &rarr;</h2>
+            <p className='font-epilogue font-semibold text-[18px] text-white'>
             Have a question or comment? Contact us to learn more about our services and resources, or to provide feedback on our website. 
             
             </p>

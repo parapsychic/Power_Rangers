@@ -1,12 +1,30 @@
 import "../styles/Feed.css";
 import Card from "../components/Card"
+import { useStateContext } from "../context";
 import Compose from "../components/Compose";
+import DisplayPosts from "../components/DisplayPosts"
+import { ConnectWallet } from "@thirdweb-dev/react";
+import { useEffect, useState } from "react";
 
 export default function Feed({ name, profilePicture }) {
+
+  const [posts, setPosts] = useState([]);
+  const { address, contract, getPost } = useStateContext();
+
+  const fetchPost = async () =>{
+    const data = await getPost();
+    setPosts(data);
+  }
+
+  useEffect(() => {
+    if(contract) fetchPost();
+  }, [address, contract]);
+
   return (
     <>
       <div className="nav-bar">
         <div id="main-logo">Foodify</div>
+        <ConnectWallet accentColor="#62CDFF" colorMode="dark" />
         <div id="user-elements">
           <div id="name">{name}</div>
           <img id="profile-picture" src={profilePicture}></img>
@@ -15,10 +33,8 @@ export default function Feed({ name, profilePicture }) {
       <div className="feed">
         <div className="feed-column">
           <Compose />
-          <Card profilePicture={"https://www.drodd.com/images14/white1.jpg"}
-            name={"Something"}
-            text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
-            image={"https://www.wallpapers13.com/wp-content/uploads/2015/12/Nature-Lake-Bled.-Desktop-background-image-840x525.jpg"}
+          <DisplayPosts
+            posts={posts}
           />
         </div>
       </div>
