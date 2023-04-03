@@ -10,6 +10,7 @@ contract foodify{
     constructor(){
         counter = 0;
         owner = msg.sender;
+        priority = 0;
     }
 
     struct post{
@@ -17,6 +18,9 @@ contract foodify{
         uint256 id;
         string postTxt;
         string postImg;
+        uint256 priority;
+        uint256 upvotes;
+        uint256 downvotes;
     }
 
     event postCreated(
@@ -29,15 +33,18 @@ contract foodify{
     mapping(uint256 => post) Posts;
 
     function uploadPost(
-        string memory postTxt,
-        string memory postImg
+    string memory postTxt,
+    string memory postImg
     ) public payable{
-        require( msg.value == (1 ether), "Please submit 1 Matic." );
         post storage newPost = Posts[counter];
         newPost.postTxt = postTxt;
         newPost.postImg = postImg;
         newPost.creator = msg.sender;
         newPost.id = counter;
+        newPost.priority = 0;
+        newPost.upvotes = 0;
+        newPost.downvotes = 0;
+        
         emit postCreated(
             msg.sender,
             counter,
@@ -45,15 +52,24 @@ contract foodify{
             postImg
         );
         counter++;
-
-        payable(owner).transfer(msg.value);
-
     }
 
-    function getPost( uint256 id ) public view returns ( string memory, string memory, address ){
+    function getPost( uint256 id ) public view returns ( string memory, string memory, address, uint256, uint256, uint256 ){
         require( id < counter, "No such Post." );
-
         post storage postId = Posts[id];
-        return (postId.postTxt, postId.postImg, postId.creator);
+        return (postId.postTxt, postId.postImg, postId.creator, postId.priority, postId.upvotes, postId.downvotes);
     }
+
+    function upvotePost( uint256 id ) public{
+        require( id < counter, "No such Post." );
+        Posts[id].upvotes++;
+        Posts[id].priority++;
+    }
+
+    function downvotePost( uint256 id ) public{
+        require( id < counter, "No such Post." );
+        Posts[id].downvotes++;
+        Posts[id].priority--;
+    }
+    
 }
