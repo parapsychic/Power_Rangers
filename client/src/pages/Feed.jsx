@@ -5,19 +5,20 @@ import Compose from "../components/Compose";
 import DisplayPosts from "../components/DisplayPosts"
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { useEffect, useState } from "react";
+import { id } from "ethers/lib/utils";
 
 export default function Feed({ name, profilePicture }) {
 
   const [posts, setPosts] = useState([]);
   const { address, contract, getPost } = useStateContext();
 
-  const fetchPost = async () =>{
-    const data = await getPost();
+  const fetchPost = async (id) =>{
+    const data = await getPost(id);
     setPosts(data);
   }
 
   useEffect(() => {
-    if(contract) fetchPost();
+    if(contract) fetchPost(id);
   }, [address, contract]);
 
   return (

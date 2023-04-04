@@ -20,38 +20,39 @@ export default function Team() {
 
         <div className="grid">
           <a href="https://www.linkedin.com/in/alan-bg/" className="card">
-            <h2>Alan  Biju  George</h2>
+            <h2 className="font-epilogue font-semibold text-[18px] text-white">Alan  Biju  George</h2>
             <div className="teamdes">
             <img src={person} alt="My Image" width={100} height={150} />
-            <p>
+            <p className="font-epilogue font-semibold text-[18px] text-white">
             Software engineer,Specialised in App and Web Development.
             </p>
             </div>
           </a>
 
           <a href="https://www.linkedin.com/in/anandusunilkumar/" className="card">
-            <h2>Anandu Sunil Kumar</h2>
+            <h2 className="font-epilogue font-semibold text-[18px] text-white">Anandu Sunil Kumar</h2>
             <div className="teamdes">
-            <img src={person} alt="My Image" width={100} height={150} /><p>
+            <img src={person} alt="My Image" width={100} height={150} />
+            <p className="font-epilogue font-semibold text-[18px] text-white">
             Software engineer,Specialised in App Development and Machine Learning
             </p>
             </div>
           </a>
 
           <a href="https://www.linkedin.com/in/antony-thomas-8a6273212/" className="card">
-            <h2> Antony  Thomas</h2>
+            <h2 className="font-epilogue font-semibold text-[18px] text-white"> Antony  Thomas</h2>
             <div className="teamdes">
             <img src={person} alt="My Image" width={100} height={150} />
-            <p>
+            <p className="font-epilogue font-semibold text-[18px] text-white">
             Software engineer,Specialised in Webdevelopment and Blockchain.
             </p>
             </div>
           </a>
           <a href="https://www.linkedin.com/in/febinkdominic/" className="card">
-            <h2>Febin  K  Dominic</h2>
+            <h2 className="font-epilogue font-semibold text-[18px] text-white">Febin  K  Dominic</h2>
             <div className="teamdes">
             <img src={person} alt="My Image" width={100} height={150} />
-            <p>
+            <p className="font-epilogue font-semibold text-[18px] text-white">
             Software engineer,Specialised in Machine Learning,App and Web Developmen.
             </p>
             </div>

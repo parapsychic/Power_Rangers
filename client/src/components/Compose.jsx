@@ -17,12 +17,13 @@ const Compose = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await uploadPost({ ...form})
+        console.log(form.postTxt)
+        await uploadPost(form.postTxt, form.postImg)
         navigate('/Feed');
     }
 
   return (
-    <div className="p-[20px] mb-[40px] text-center justify-center items-center bg-[#4D4D4D] rounded-[20px]">
+    <div className="w-[600px] p-[20px] mb-[40px] text-center justify-center items-center bg-[#1f1e1e] rounded-[20px]">
         <form onSubmit={handleSubmit} className="mt-[20px] flex flex-col gap-[20px]">
             <FormField 
                 placeholder="Write your Story"

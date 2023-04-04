@@ -8,6 +8,7 @@ import "./styles/globals.css";
 import Team from "./pages/team";
 import Objective from "./pages/objective";
 import Feed from "./pages/Feed";
+import ContactUs from "./pages/ContactUs"
 import { StateContextProvider } from "./context";
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -27,6 +28,7 @@ root.render(
               <Route path="/team" element={<Team/>}/>
               <Route path="/objective" element={<Objective/>}/>
               <Route path="/Feed" element={<Feed/>}/>
+              <Route path="/ContactUs" element={<ContactUs/>}/>
           
             </Routes>
           </StateContextProvider>
