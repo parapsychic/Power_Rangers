@@ -11,33 +11,49 @@ export const StateContextProvider = ({ children }) => {
     const address = useAddress();
     const connect = useMetamask();
 
-    const publishPost = async (form) => {
-        try {
+    // const publishPost = async (form) => {
+    //     try {
     
-            // NOTE* Parameters to be given the same order
-            // the smart contract
-          const data = await uploadPost([
-            address, // owner
-            form.postTxt, 
-            form.postImg,
-            form.priority,
-            form.upvotes,
-            form.downvotes
-          ])
+    //         // NOTE* Parameters to be given the same order
+    //         // the smart contract
+    //       const data = await uploadPost([
+    //         address, // owner
+    //         form.postTxt, 
+    //         form.postImg,
+    //       ])
     
-          console.log("contract call success", data)
-        } catch (error) {
-          console.log("contract call failure", error)
-        }
-    }
+    //       console.log("contract call success", data)
+    //     } catch (error) {
+    //       console.log("contract call failure", error)
+    //     }
+    // }
 
-    const getPost = async () =>{
+    const publishPost = async (form, ownerAddress) => {
+        try {
+          const { postTxt, postImg, priority, upvotes, downvotes } = form;
+      
+          const data = await uploadPost(
+            postTxt,
+            postImg,
+            { 
+              from: ownerAddress,
+              value: 0, // Set the value of Ether to send along with the function call
+            }
+          );
+      
+          console.log("contract call success", data);
+        } catch (error) {
+          console.log("contract call failure", error);
+        }
+      };
+
+    const getPost = async () => {
         const posts = await contract.call('getPost');
 
         const parsedPosts = posts.map((post, i) => ({
             creator: post.creator,
             postTxt: post.postTxt,
-            postImg: post.postImg,
+            postImg: post.postImg,  
             priority: post.priority,
             upvotes: post.upvotes,
             downvotes: post.downvotes,

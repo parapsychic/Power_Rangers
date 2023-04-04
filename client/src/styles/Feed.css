@@ -10,7 +10,7 @@
 
 .nav-bar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px;
 }
 
